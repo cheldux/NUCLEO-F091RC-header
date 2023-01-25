@@ -1,5 +1,9 @@
 #include <inttypes.h>
 
+struct flash{
+  volatile uint32_t ACR, KEYR, OPTKEYR, SR, CR, AR, OBR, WRPR;
+};
+#define  FLASH ((struct flash *)0x40022000)
 struct rcc {
   volatile uint32_t CR, CFGR, CIR, APB2RSTR, APB1RSTR, AHBENR, APB2ENR, APB1ENR,
       BDCR, CSR, AHBRSTR, CFGR2, CFGR3, CR2;
